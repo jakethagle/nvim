@@ -53,5 +53,6 @@ set guifont=JetBrainsMono\ Nerd\ Font
 " au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
 " You can't stop me
 cmap w!! w !sudo tee %

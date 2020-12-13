@@ -55,6 +55,16 @@ let g:which_key_map['W'] = [ ':call WindowSwap#EasyWindowSwap()'               ,
 let g:which_key_map['z'] = [ 'Goyo'                                            , 'zen' ]
 
 " Group mappings
+let g:which_key_map.w = {
+       \ 'name' : '+windows' ,
+       \ 'h' : ['<C-W>h'        , 'left'],
+       \ 'j' : ['<C-W>j'        , 'down'],
+       \ 'k' : ['<C-W>k'        , 'up'],
+       \ 'l' : ['<C-W>l'        , 'right'],
+       \ 'v' : ['<C-W>v'        , 'split vertical'],
+       \ 's' : ['<C-W>s'        , 'split horizontal'],
+       \ 'd' : ['<C-W>c'        , 'close window'],
+       \}
 
 " a is for actions
 let g:which_key_map.a = {

@@ -15,7 +15,8 @@ local colors = {
   magenta = '#d16d9e',
   grey = '#c0c0c0',
   blue = '#569CD6',
-  red = '#D16969'
+  red = '#D16969',
+  maroon = '#800000',
 }
 
 local buffer_not_empty = function()
@@ -73,7 +74,7 @@ gls.left[2] = {
                           ['!']  = colors.red,
                           t = colors.red}
       vim.api.nvim_command('hi GalaxyViMode guibg='..mode_color[vim.fn.mode()])
-      return '  NVCode '
+      return 'Code'
     end,
     separator = ' ',
     separator_highlight = {colors.yellow,function()
@@ -195,7 +196,7 @@ gls.left[12] = {
 gls.left[13] = {
   DiagnosticInfo = {
     provider = 'DiagnosticInfo',
-    icon = '   ',
+    icon = '   ',
     highlight = {colors.orange,colors.bg},
   }
 }
@@ -230,32 +231,32 @@ gls.right[4] = {
   }
 }
 
--- gls.short_line_left[1] = {
---   BufferType = {
---     provider = 'FileTypeName',
---     separator = ' ',
---     separator_highlight = {colors.purple,colors.bg},
---     highlight = {colors.grey,colors.purple}
---   }
--- }
-
 gls.short_line_left[1] = {
-  LeftEnd = {
-    provider = function() return ' ' end,
+  BufferType = {
+    provider = 'FileTypeName',
     separator = ' ',
     separator_highlight = {colors.purple,colors.bg},
-    highlight = {colors.purple,colors.bg}
+    highlight = {colors.grey,colors.purple}
   }
 }
 
--- gls.short_line_right[1] = {
---   BufferIcon = {
---     provider= 'BufferIcon',
+-- gls.short_line_left[1] = {
+--   LeftEnd = {
+--     provider = function() return ' ' end,
 --     separator = ' ',
 --     separator_highlight = {colors.purple,colors.bg},
---     highlight = {colors.grey,colors.purple}
+--     highlight = {colors.purple,colors.bg}
 --   }
 -- }
+
+gls.short_line_right[1] = {
+  BufferIcon = {
+    provider= 'BufferIcon',
+    separator = ' ',
+    separator_highlight = {colors.purple,colors.bg},
+    highlight = {colors.grey,colors.purple}
+  }
+}
 -- function! s:my_bookmark_color() abort
 --   let s:scl_guibg = matchstr(execute('hi SignColumn'), 'guibg=\zs\S*')
 --   if empty(s:scl_guibg)
