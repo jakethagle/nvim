@@ -1,0 +1,27 @@
+{
+  "configurations": {
+    "Python Attach": {
+      "adapter": "multi-session",
+      "configuration": {
+        "request": "attach",
+        "pathMappings": [
+          {
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "/app"
+          }
+        ],
+        "breakpoints": {
+          "exception": {
+            "caught": "N",
+            "uncaught": "Y"
+          }
+        },
+        "host": "127.0.0.1",
+        "port": 5678,
+        "redirectOutput": true,
+        "django": true,
+        "justMyCode": false
+      }
+    }
+  }
+}

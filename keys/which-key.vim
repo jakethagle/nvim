@@ -64,6 +64,7 @@ let g:which_key_map.w = {
        \ 'v' : ['<C-W>v'        , 'split vertical'],
        \ 's' : ['<C-W>s'        , 'split horizontal'],
        \ 'd' : ['<C-W>c'        , 'close window'],
+       \ 'o' : [':on!'        , 'close other windows'],
        \}
 
 " a is for actions
@@ -125,7 +126,8 @@ let g:which_key_map.d = {
       \ 'i' : ['<Plug>VimspectorStepInto'                      , 'step into'],
       \ 'p' : ['<Plug>VimspectorPause'                         , 'pause'],
       \ 'r' : ['<Plug>VimspectorRestart'                       , 'restart'],
-      \ 's' : ['<Plug>VimspectorStop'                          , 'stop'],
+      \ 's' : ['<Plug>VimspectorReset'                          , 'stop'],
+      \ 'S' : ['<Plug>VimspectorLaunch'                          , 'start'],
       \ }
 
 " f is for find and replace
@@ -196,6 +198,12 @@ let g:which_key_map.m = {
       " \ 's' : [':Snippets'     , 'snippets'],
 
 " s is for search
+let g:which_key_map.p = {
+      \ 'name' : '+project',
+      \ 'f' : [ ':Files' , 'search files' ],
+      \ '/' : [ ':Rg' , 'search project' ],
+      \}
+
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
       \ '/' : [':History/'              , 'history'],
