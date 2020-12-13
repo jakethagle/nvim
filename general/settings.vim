@@ -54,6 +54,7 @@ set guifont=JetBrainsMono\ Nerd\ Font
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
+autocmd TermOpen * setlocal nonumber norelativenumber
 
 " You can't stop me
 cmap w!! w !sudo tee %

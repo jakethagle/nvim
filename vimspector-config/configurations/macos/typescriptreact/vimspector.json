@@ -1,0 +1,13 @@
+{
+  "configurations": {
+    "launch": {
+      "adapter": "chrome",
+      "configuration": {
+        "request": "launch",
+        "name": "Debug Frontend",
+        "url": "https://local.prismatic-dev.io:3000",
+        "webRoot": "${workspaceFolder}/src"
+      }
+    }
+  }
+}

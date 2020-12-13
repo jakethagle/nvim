@@ -65,6 +65,8 @@ let g:which_key_map.w = {
        \ 's' : ['<C-W>s'        , 'split horizontal'],
        \ 'd' : ['<C-W>c'        , 'close window'],
        \ 'o' : [':on!'        , 'close other windows'],
+       \ '+' : [':res +10'        , 'close other windows'],
+       \ '-' : [':res -10'        , 'close other windows'],
        \}
 
 " a is for actions
