@@ -114,6 +114,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Neovim in Browser
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
     Plug 'petobens/poet-v'
+    Plug 'dracula/vim', { 'as': 'dracula' }
+
+    " Terraform
+    Plug 'hashivim/vim-terraform'
+
     " Rainbow brackets
     " Plug 'luochen1990/rainbow'
     " Async Linting Engine

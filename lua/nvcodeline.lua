@@ -6,7 +6,7 @@ gl.short_line_list = {'LuaTree','vista','dbui'}
 
 local colors = {
   bg = '#282c34',
-  yellow = '#fabd2f',
+  yellow = '#f1fa8c',
   cyan = '#008080',
   darkblue = '#081633',
   green = '#608B4E',
@@ -28,18 +28,18 @@ end
 
 -- gls.left[1] = {
 --   FirstElement = {
---     -- provider = function() return '▋' end,
---     provider = function() return ' ' end,
+--     provider = function() return '▋' end,
+--     -- provider = function() return ' ' end,
 --     highlight = {colors.bg,colors.bg}
 --   },
 -- }
 -- gls.left[2] = {
 --   ViMode = {
 --     provider = function()
---       local alias = {n = 'NORMAL',i = 'INSERT',c= 'COMMAND',V= 'VISUAL', [''] = 'VISUAL'}
+--       local alias = {n = 'NORMAL',i = 'INSERT',c= 'COMMAND',v= 'VISUAL', [''] = 'VISUAL'}
 --       return alias[vim.fn.mode()]
 --     end,
---     separator = ' ',
+--     separator = '',
 --     separator_highlight = {colors.yellow,function()
 --       if not buffer_not_empty() then
 --         return colors.purple
@@ -74,7 +74,8 @@ gls.left[2] = {
                           ['!']  = colors.red,
                           t = colors.red}
       vim.api.nvim_command('hi GalaxyViMode guibg='..mode_color[vim.fn.mode()])
-      return 'Code'
+      local alias = {n = 'NORMAL',i = 'INSERT',c= 'COMMAND',v= 'VISUAL', [''] = 'VISUAL'}
+      return alias[vim.fn.mode()]
     end,
     separator = ' ',
     separator_highlight = {colors.yellow,function()
@@ -86,14 +87,7 @@ gls.left[2] = {
     highlight = {colors.grey,colors.bg,'bold'},
   },
 }
--- gls.left[3] ={
---   FileIcon = {
---     separator = ' ',
---     provider = 'FileIcon',
---     condition = buffer_not_empty,
---     highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.bg},
---   },
--- }
+
 -- gls.left[4] = {
 --   FileName = {
 --     provider = {'FileSize'},
@@ -108,7 +102,7 @@ gls.left[3] = {
   GitIcon = {
     provider = function() return ' ' end,
     condition = buffer_not_empty,
-    highlight = {colors.orange,colors.bg},
+    highlight = {colors.blue,colors.bg},
   }
 }
 gls.left[4] = {
@@ -200,6 +194,17 @@ gls.left[13] = {
     highlight = {colors.orange,colors.bg},
   }
 }
+
+
+gls.right[0] = {
+  FileIcon = {
+    separator = '',
+    provider = 'FileIcon',
+    condition = buffer_not_empty,
+    highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.bg},
+  },
+}
+
 gls.right[1]= {
   FileFormat = {
     provider = 'FileFormat',
@@ -230,16 +235,6 @@ gls.right[4] = {
     highlight = {colors.yellow,colors.purple},
   }
 }
-
-gls.short_line_left[1] = {
-  BufferType = {
-    provider = 'FileTypeName',
-    separator = ' ',
-    separator_highlight = {colors.purple,colors.bg},
-    highlight = {colors.grey,colors.purple}
-  }
-}
-
 -- gls.short_line_left[1] = {
 --   LeftEnd = {
 --     provider = function() return ' ' end,
