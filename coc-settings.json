@@ -1,4 +1,5 @@
 {
+  "coc.preferences.rootPatterns": ["tsconfig.json", "package.json", ".git"],
   // suggestions
   // "suggest.echodocSupport": true,
   // TODO add more labels and give them cool glyphs
@@ -8,7 +9,7 @@
     "function": ""
   },
   "snippets.priority": 1,
-  //"yank.priority": 1,
+  "yank.priority": 1,
   "suggest.languageSourcePriority": 99,
   "coc.source.file.priority": 2,
   "coc.source.around.priority": 3,
@@ -19,15 +20,7 @@
   "diagnostic.warningSign": " ",
   "diagnostic.infoSign": " ",
   "diagnostic.hintSign": " ",
-  // "diagnostic.displayByAle": true,
-  // "diagnostic.virtualText": true, // this won't work with codelens when error on same line
-
-  // codelens
-  "codeLens.enable": true,
-  "java.referencesCodeLens.enabled": true,
-  "java.implementationsCodeLens.enabled": true,
-  "java.completion.enabled": true,
-  "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
+  "diagnostic.virtualText": true, // this won't work with codelens when error on same line
 
   // list
   "list.indicator": ">",
@@ -43,12 +36,21 @@
     "yaml",
     "json",
     "python",
-    "java",
     "typescript",
     "javascriptreact",
     "typescriptreact"
   ],
+
   "coc.preferences.hoverTarget": "float",
+  "coc.preferences.promptInput": true,
+  "coc.preferences.enableFloatHighlight": true,
+  "eslint.trace.server": "verbose",
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
 
   // python config
   "python.analysis.autoImportCompletions": true,
@@ -62,7 +64,11 @@
   "python.analysis.useLibraryCodeForTypes": true,
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "black",
-  "python.formatting.blackArgs": [],
+  "python.formatting.blackArgs": [
+    "--quiet",
+    "--target-version py38",
+    "./*.py ./docker/ ./scripts/ ./backend/ ./docusaurus/scripts/"
+  ],
   "python.formatting.autopep8Path": "autopep8",
   "python.formatting.autopep8Args": [],
   "python.formatting.yapfPath": "yapf",
@@ -97,10 +103,10 @@
   "wxss.validate": false,
 
   // explorer
-  "explorer.width": 30,
+  "explorer.width": 50,
   "explorer.file.root.template": "[icon] [git] [hidden & 1][root]",
   "explorer.icon.enableNerdfont": true,
-  "explorer.previewAction.onHover": false,
+  "explorer.previewAction.onHover": "labeling",
   "explorer.icon.enableVimDevicons": false,
   "explorer.file.showHiddenFiles": true,
   "explorer.keyMappings.global": {
@@ -108,29 +114,12 @@
     "v": "open:vsplit"
   },
 
-  "languageserver": {
-    "lua": {
-      "command": "/home/chris/.luambenvs/neovim4/bin/lua-lsp",
-      "filetypes": ["lua"],
-      "trace.server": "verbose"
-    }
-  },
-
   "bookmark.sign": "",
 
   //coc-emoji
-  "coc.source.emoji.filetypes": ["markdown"]
+  "coc.source.emoji.filetypes": ["markdown"],
 
-  // lua
-  //"lua.useSumnekoLs": true,
-  //"lua.commandPath": "/home/chris/.luambenvs/neovim3/bin/lua-lsp"
-  //"lua.enable": true,
-  //"Lua.completion.enable": true,
-  //"Lua.runtime.version": "Lua 5.1",
-  //"Lua.runtime.path": ["?.lua", "?/init.lua", "?/?.lua"],
-  //"lua.version": "5.1"
-  //"lua.commandPath": "/home/chris/.vscode-insiders/extensions/sumneko.lua-1.0.5/server/bin/Linux/lua-language-server"
-
-  // TODO b:coc_suggest_disable=1 GOYO
-  // TODO add to paths.vim g:coc_node_path
+  //coc-git
+  "git.addGBlameToVirtualText": true,
+  "git.enableGutters": false
 }

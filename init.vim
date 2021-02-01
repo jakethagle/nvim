@@ -57,6 +57,8 @@ else
   source $HOME/.config/nvim/plug-config/vimspector.vim
   source $HOME/.config/nvim/plug-config/vim-venom.vim
   source $HOME/.config/nvim/plug-config/vim-terraform.vim
+  source $HOME/.config/nvim/plug-config/split-term.vim
+  source $HOME/.config/nvim/plug-config/indentLine.vim
   " source $HOME/.config/nvim/plug-config/sneak.vim
   source $HOME/.config/nvim/plug-config/rainbow.vim
   " source $HOME/.config/nvim/plug-config/illuminate.vim

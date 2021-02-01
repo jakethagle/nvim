@@ -30,6 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'machakann/vim-highlightedyank'
   else
 
+   Plug 'bronson/vim-trailing-whitespace'
     " Easymotion
     Plug 'easymotion/vim-easymotion'
     " Surround
@@ -41,8 +42,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
     " Treesitter
-    Plug 'nvim-treesitter/nvim-treesitter'
-    Plug 'nvim-treesitter/playground'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     " Cool Icons
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'ryanoasis/vim-devicons'
@@ -113,68 +113,29 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'szw/vim-maximizer'
     " Neovim in Browser
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-    Plug 'petobens/poet-v'
+
+    " Dracula slaps
     Plug 'dracula/vim', { 'as': 'dracula' }
 
     " Terraform
     Plug 'hashivim/vim-terraform'
 
-    " Rainbow brackets
-    " Plug 'luochen1990/rainbow'
-    " Async Linting Engine
-    " TODO make sure to add ale config before plugin
-    " Plug 'dense-analysis/ale'
-    " Better Whitespace
-    " Plug 'ntpeters/vim-better-whitespace'
-    " Multiple Cursors
-    " TODO add this back in change from C-n
-    " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-    " Plug 'yuezk/vim-js'
-    " Plug 'maxmellon/vim-jsx-pretty'
-    " Plug 'jelera/vim-javascript-syntax'
-    " Plugin Graveyard
+    " Better term splitting
+    Plug 'vimlab/split-term.vim'
 
-    " Debug
-    " Plug 'mfussenegger/nvim-dap'
-    " Plug 'nvim-dap-virtual-text'
-    " Sneak
-    " Plug 'justinmk/vim-sneak'
-    " Plug 'nvim-treesitter/nvim-treesitter-refactor'
-    " Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-    " Plug 'romgrk/nvim-treesitter-context'
-    " Minimap
-    " Plug 'wfxr/minimap.vim'
-    " jsx syntax support
-    " Typescript syntax
-    " Plug 'HerringtonDarkholme/yats.vim'
-    " Multiple Cursors
-    " Plug 'terryma/vim-multiple-cursors'
-    " Plug 'kaicataldo/material.vim'
-    " Plug 'tomasiser/vim-code-dark'
-    " Plug 'mg979/vim-xtabline'
-    " Files
-    " Plug 'tpope/vim-eunuch'
-    " Vim Wiki
-    " Plug 'https://github.com/vimwiki/vimwiki.git'
-    " Better Comments
-    " Plug 'jbgutierrez/vim-better-comments'
-    " Echo doc
-    " Plug 'Shougo/echodoc.vim'
-    " Plug 'hardcoreplayers/spaceline.vim'
-    " Plug 'vim-airline/vim-airline'
-    " Plug 'vim-airline/vim-airline-themes'
-    " Ranger
-    " Plug 'francoiscabrol/ranger.vim'
-    " Plug 'rbgrouleff/bclose.vim'
-    " Making stuff
-    " Plug 'neomake/neomake'
-    " Plug 'mhinz/vim-signify'
-    " Plug 'preservim/nerdcommenter'
-    " Plug 'brooth/far.vim'
-    " Plug 'atishay/far.vim'
-    " Plug 'romgrk/lib.kom'
-    " Plug 'brooth/far.vim'
-    " Debugging
+    " Show whitespace as "|"
+    Plug 'Yggdroot/indentLine'
+
+    " Rainbow brackets
+    Plug 'luochen1990/rainbow'
+
+    " Todos
+    Plug 'aserebryakov/vim-todo-lists'
+
+    Plug 'vimwiki/vimwiki'
+
+    Plug 'tveskag/nvim-blame-line'
+
   endif
 
 call plug#end()

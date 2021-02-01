@@ -36,7 +36,6 @@ set timeoutlen=100                      " By default timeoutlen is 1000 ms
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set incsearch
 set guifont=JetBrainsMono\ Nerd\ Font
-
 " New stuff
 " set notimeout nottimeout
 " set scrolloff=1
@@ -47,14 +46,14 @@ set guifont=JetBrainsMono\ Nerd\ Font
 " set nostartofline
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " set mmp=1300
-" set autochdir                           " Your working directory will always be the same as your working directory
 " set foldcolumn=2                        " Folding abilities
 
 " au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * let b:coc_root_patterns = ['tsconfig.json', '.git', '.env']
 
-autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
 autocmd TermOpen * setlocal nonumber norelativenumber
-
+autocmd CursorHold * silent call CocActionAsync('highlight')
+let g:WorkspaceFolders = ["/Users/jhagle/src/prismatic", "/Users/jhagle/src/prismatic/e2e", "/Users/jhagle/src/prismatic/infrastructure", "/Users/jhagle/src/prismatic/frontend", "/Users/jhagle/src/prismatic/components"]
 " You can't stop me
 cmap w!! w !sudo tee %

@@ -41,7 +41,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 let g:which_key_map['/'] = [ ':call Comment()'                                 , 'comment' ]
 let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     , 'open init' ]
 let g:which_key_map[';'] = [ ':Commands'                                       , 'commands' ]
-let g:which_key_map['='] = [ '<C-W>='                                          , 'balance windows' ]
+let g:which_key_map['='] = [ '<C-W>J'                                          , 'balance windows' ]
 let g:which_key_map['e'] = [ ':CocCommand explorer --toggle --sources=file+'   , 'explorer' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
 let g:which_key_map['n'] = [ ':let @/ = ""'                                    , 'no highlight' ]
@@ -53,6 +53,7 @@ let g:which_key_map['u'] = [ ':UndotreeToggle'                                 ,
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
 let g:which_key_map['W'] = [ ':call WindowSwap#EasyWindowSwap()'               , 'move window' ]
 let g:which_key_map['z'] = [ 'Goyo'                                            , 'zen' ]
+let g:which_key_map["'"] = [ ':FloatermToggle'                                            , 'toggle terminal' ]
 
 " Group mappings
 let g:which_key_map.w = {
@@ -142,20 +143,8 @@ let g:which_key_map.f = {
 " k is for task
 let g:which_key_map.k = {
       \ 'name' : '+task' ,
-      \ 'c' : [':AsyncTask file-compile'      , 'compile file'],
-      \ 'b' : [':AsyncTask project-build'     , 'build project'],
-      \ 'e' : [':AsyncTaskEdit'               , 'edit local tasks'],
-      \ 'f' : [':AsyncTaskFzf'                , 'find task'],
-      \ 'g' : [':AsyncTaskEdit!'              , 'edit global tasks'],
-      \ 'h' : [':AsyncTaskList!'              , 'list hidden tasks'],
-      \ 'l' : [':CocList tasks'               , 'list tasks'],
-      \ 'm' : [':AsyncTaskMacro'              , 'macro help'],
-      \ 'o' : [':copen'                       , 'open task view'],
-      \ 'r' : [':AsyncTask file-run'          , 'run file'],
-      \ 'p' : [':AsyncTask project-run'       , 'run project'],
-      \ 'x' : [':cclose'                      , 'close task view'],
-      \ }
-      " \ 'l' : [':AsyncTaskList'               , 'list tasks'],
+      \ 'i' : [':VimWikiIndex'      , 'Wiki Index'],
+      \}
 
 " m is for mark
 let g:which_key_map.m = {
@@ -273,7 +262,8 @@ let g:which_key_map.g = {
       \ 'i' : [':Gist -b'                          , 'post gist'],
       \ 'j' : ['<Plug>(GitGutterNextHunk)'         , 'next hunk'],
       \ 'k' : ['<Plug>(GitGutterPrevHunk)'         , 'prev hunk'],
-      \ 'l' : [':Git log'                          , 'log'],
+      \ 'L' : [':Git log'                          , 'log'],
+      \ 'l' : [':SingleBlameLine'                          , 'log'],
       \ 'm' : ['<Plug>(git-messenger)'             , 'message'],
       \ 'p' : [':Git push'                         , 'push'],
       \ 'P' : [':Git pull'                         , 'pull'],
@@ -344,9 +334,10 @@ let g:which_key_map.l = {
       " \ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
 
 " t is for terminal
+"--wintype=normal --height=10
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
-      \ ';' : [':FloatermNew --wintype=normal --height=6'        , 'terminal'],
+      \ ';' : [':FloatermNew '      , 'terminal'],
       \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                           , 'git'],
       \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
@@ -355,13 +346,14 @@ let g:which_key_map.t = {
       \ 'p' : [':FloatermNew python'                            , 'python'],
       \ 'm' : [':FloatermNew lazynpm'                           , 'npm'],
       \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
-      \ 't' : [':FloatermToggle'                                , 'toggle'],
+      \ 'l' : [':FloatermNext'                            , 'next terminal'],
+      \ 'h' : [':FloatermPrev'                                , 'previous terminal'],
       \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
       \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
       \ }
 
 " w is for wiki
-" let g:which_key_map.w = {
+" let g:which_key_map.W = {
 "       \ 'name' : '+wiki' ,
 "       \ 'w' : ['<Plug>VimwikiIndex'                              , 'ncdu'],
 "       \ 'n' : ['<plug>(wiki-open)'                              , 'ncdu'],
